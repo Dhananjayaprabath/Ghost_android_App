@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,9 +47,13 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
+        String min = postsList.get(position).getReading_time()+" min read";
+
+
           holder.tital.setText(postsList.get(position).getName());
-          holder.id.setText(postsList.get(position).getImageUrl());
+         holder.id.setText(postsList.get(position).getImageUrl());
          Picasso.get().load(postsList.get(position).getFeature_image()).into(holder.imageView);
+         holder.reading_times.setText(min);
 
          holder.layout.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -58,7 +63,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.MyView
 
              public void openNewActivity() {
                  Intent intent = new Intent(context,BlogviewActivity.class);
-                 intent.putExtra("htmlpost",postsList.get(position).getHtml());
+                intent.putExtra("htmlpost",postsList.get(position).getHtml());
                  intent.putExtra("titals",postsList.get(position).getName());
                  intent.putExtra("coverimgs",postsList.get(position).getFeature_image());
 
@@ -77,15 +82,16 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.MyView
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-TextView tital,id;
+TextView tital,id,reading_times;
 ImageView imageView;
-LinearLayout layout;
+RelativeLayout layout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tital =itemView.findViewById(R.id.textViewName);
             id= itemView.findViewById(R.id.textViewImageUrl);
             imageView=itemView.findViewById(R.id.img);
+            reading_times =itemView.findViewById(R.id.reading_time);
             layout=itemView.findViewById(R.id.layout1);
         }
     }

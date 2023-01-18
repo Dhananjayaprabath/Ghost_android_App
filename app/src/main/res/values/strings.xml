@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IoT Controller</string>
+    <string name="example_header_ghost_post">Example header ghost post</string>
 </resources>

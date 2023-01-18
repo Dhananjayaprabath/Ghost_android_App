@@ -6,9 +6,15 @@ package com.ceylon.iotcontroller;
         String imageUrl;
         String feature_image;
         String html;
+        String reading_time;
 
 
-        public Posts(String name, String imageUrl, String feature_image,String html) {
+
+        public Posts(String reading_time) {
+            this.reading_time = reading_time;
+        }
+
+        public Posts(String name, String imageUrl, String feature_image, String html) {
             this.name = name;
             this.imageUrl = imageUrl;
             this.feature_image = feature_image;
@@ -17,6 +23,14 @@ package com.ceylon.iotcontroller;
         }
 
         public Posts() {
+        }
+
+        public String getReading_time() {
+            return reading_time;
+        }
+
+        public void setReading_time(String reading_time) {
+            this.reading_time = reading_time;
         }
 
         public String getName() {

@@ -53,7 +53,7 @@ public class BlogviewActivity extends AppCompatActivity {
 
         String html =intent.getStringExtra("htmlpost");
 
-        webView.loadDataWithBaseURL("","<style>img{display: inline;height: auto;max-width: 100%;}</style>"+ html, mimeType, encoding, "");
+       webView.loadDataWithBaseURL("","<style>img{display: inline;height: auto;max-width: 100%;}</style>"+ html, mimeType, encoding, "");
 
 
     }
