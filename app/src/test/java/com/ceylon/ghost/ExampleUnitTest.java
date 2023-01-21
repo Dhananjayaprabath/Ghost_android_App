@@ -1,4 +1,4 @@
-package com.ceylon.iotcontroller;
+package com.ceylon.ghost;
 
 import org.junit.Test;
 

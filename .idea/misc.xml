@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/live app/IoTController/app/src/main/res/layout/activity_blogview.xml" value="0.22" />
-        <entry key="..\:/live app/IoTController/app/src/main/res/layout/activity_main.xml" value="0.18118466898954705" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23703703703703705" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/drawable/ic_baseline_location_disabled_24.xml" value="0.23703703703703705" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23703703703703705" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/drawable/ic_telecomapp.xml" value="0.16" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/drawable/ic_telecomworlds_logo.xml" value="0.33" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/layout/activity_blogview.xml" value="0.2586050724637681" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/live app/IoTController/app/src/main/res/layout/activity_main2.xml" value="0.2658514492753623" />
         <entry key="..\:/live app/IoTController/app/src/main/res/layout/list_items.xml" value="0.2949438202247191" />
+        <entry key="..\:/live app/IoTController/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.28229166666666666" />
       </map>
     </option>
   </component>

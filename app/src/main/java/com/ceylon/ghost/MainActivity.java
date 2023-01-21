@@ -1,16 +1,18 @@
-package com.ceylon.iotcontroller;
+package com.ceylon.ghost;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.AsyncTask;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,12 +25,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,15 +44,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().hide();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        
 
         postsList = new ArrayList<>();
-        recyclerView =findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
 
-        progressBar =findViewById(R.id.idPBLoading);
+        progressBar = findViewById(R.id.idPBLoading);
 
 
-getdatavolly();
+        getdatavolly();
+        // ATTENTION: This was auto-generated to handle app links.
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
     }
 
     private void getdatavolly() {
@@ -71,7 +73,7 @@ getdatavolly();
                     @Override
                     public void onResponse(String response) {
                         //hiding the progressbar after completion
-                        progressBar.setVisibility(View.INVISIBLE);
+                        progressBar.setVisibility(View.GONE);
 
 
                         try {
@@ -94,6 +96,7 @@ getdatavolly();
                                 posts.setFeature_image(jsonObject1.getString("feature_image"));
                                 posts.setHtml(jsonObject1.getString("html"));
                                 posts.setReading_time(jsonObject1.getString("reading_time"));
+                                posts.setUrl(jsonObject1.getString("url"));
 
                                 postsList.add(posts);
 

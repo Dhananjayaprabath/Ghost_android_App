@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ceylon.iotcontroller">
+    package="com.ceylon.ghost">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,18 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IoTController">
         <activity
-            android:name=".MainActivity2"
+            android:name="com.ceylon.ghost.MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".BlogviewActivity"
+            android:name="com.ceylon.ghost.BlogviewActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.ceylon.ghost.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="telecomworlds.com" />
             </intent-filter>
         </activity>
 

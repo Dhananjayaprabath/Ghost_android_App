@@ -1,34 +1,30 @@
-package com.ceylon.iotcontroller;
+package com.ceylon.ghost;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.DisplayMetrics;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
-
-import org.sufficientlysecure.htmltextview.HtmlHttpImageGetter;
-import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 public class BlogviewActivity extends AppCompatActivity {
 
     TextView tital;
     ImageView imageView;
     WebView webView;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blogview);
 
-        getSupportActionBar().hide();
+
 
         tital = findViewById(R.id.tital);
         imageView=findViewById(R.id.app_bar_image);
@@ -36,8 +32,10 @@ public class BlogviewActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-       tital.setText(intent.getStringExtra("titals"));
+        String maintital =intent.getStringExtra("titals");
+       tital.setText(maintital);
         String imgs =intent.getStringExtra("coverimgs");
+        String surls =intent.getStringExtra("urls");
 
         Picasso.get().load(imgs).into(imageView);
 
@@ -48,7 +46,22 @@ public class BlogviewActivity extends AppCompatActivity {
         final String mimeType = "text/html";
         final String encoding = "UTF-8";
 
+floatingActionButton=findViewById(R.id.floatingActionButton1);
+floatingActionButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
 
+        Intent intentt = new Intent(Intent.ACTION_SEND);
+
+        // setting type of data shared as text
+        intentt.setType("text/plain");
+        intentt.putExtra(Intent.EXTRA_SUBJECT,maintital );
+
+        // Adding the text to share using putExtra
+        intentt.putExtra(Intent.EXTRA_TEXT, surls);
+        startActivity(Intent.createChooser(intentt, "Share Via"));
+    }
+});
 
 
         String html =intent.getStringExtra("htmlpost");

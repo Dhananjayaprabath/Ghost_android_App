@@ -1,4 +1,4 @@
-package com.ceylon.iotcontroller;
+package com.ceylon.ghost;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -66,6 +64,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.MyView
                 intent.putExtra("htmlpost",postsList.get(position).getHtml());
                  intent.putExtra("titals",postsList.get(position).getName());
                  intent.putExtra("coverimgs",postsList.get(position).getFeature_image());
+                 intent.putExtra("urls",postsList.get(position).getUrl());
 
                  context.startActivity(intent);
              }

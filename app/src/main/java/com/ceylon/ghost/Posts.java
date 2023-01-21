@@ -1,4 +1,4 @@
-package com.ceylon.iotcontroller;
+package com.ceylon.ghost;
 
 
     public class Posts {
@@ -7,23 +7,34 @@ package com.ceylon.iotcontroller;
         String feature_image;
         String html;
         String reading_time;
-
+        String url;
 
 
         public Posts(String reading_time) {
             this.reading_time = reading_time;
         }
 
-        public Posts(String name, String imageUrl, String feature_image, String html) {
+        public Posts(String name, String imageUrl, String feature_image, String html,String url) {
             this.name = name;
             this.imageUrl = imageUrl;
             this.feature_image = feature_image;
             this.html = html;
+            this.url =url;
 
         }
 
         public Posts() {
         }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+
 
         public String getReading_time() {
             return reading_time;
