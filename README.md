@@ -1,4 +1,4 @@
-Ghost Blog Android App
+Ghost Blog Android App \n
 This is an Android application developed in Java that allows users to access and read posts from a Ghost blog using the Ghost API. The app provides a seamless and user-friendly interface for browsing and consuming content from the blog.
 
 Features
