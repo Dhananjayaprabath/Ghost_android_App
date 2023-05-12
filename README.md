@@ -25,7 +25,7 @@ This is an Android application developed in Java that allows users to access and
 
 To run this app locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/ghost-blog-android-app.git`
+1. Clone the repository: `git clone [https://github.com/Dhananjayaprabath/Ghost_android_App.git]`
 2. Open the project in Android Studio.
 3. Configure the necessary dependencies in the `build.gradle` files.
 4. Build and run the app on an Android emulator or device.
