@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String JSON_URL = "https://telecomworlds.com/ghost/api/content/posts/?key=b2d3310778046fca39d75a2c9d";
+    private static final String JSON_URL = "https://<YOUR DOMAIN>/ghost/api/content/posts/?key=<YOUR API KEY>";
 
     //listview object
     ListView listView;
